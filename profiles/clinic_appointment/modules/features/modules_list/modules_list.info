@@ -1,0 +1,40 @@
+name = Modules list
+core = 7.x
+package = Features
+dependencies[] = admin_menu
+dependencies[] = comment
+dependencies[] = content_access
+dependencies[] = ctools
+dependencies[] = date
+dependencies[] = date_api
+dependencies[] = date_popup
+dependencies[] = date_views
+dependencies[] = entity
+dependencies[] = entityreference
+dependencies[] = field_group
+dependencies[] = fullcalendar
+dependencies[] = fullcalendar_legend
+dependencies[] = fullcalendar_options
+dependencies[] = path
+dependencies[] = references_dialog
+dependencies[] = strongarm
+dependencies[] = taxonomy
+dependencies[] = token
+dependencies[] = views
+features[features_api][] = api:2
+project path = sites/all/modules/custom/features
+
+
+; Information added by drush on 2015-06-16
+version = "7.x-1.0-alpha1+7-dev"
+core = "7.x"
+project = "clinic_appointment"
+datestamp = "1434492387"
+
+
+; Information added by Drupal.org packaging script on 2016-01-24
+version = "7.x-1.0"
+core = "7.x"
+project = "clinic_appointment"
+datestamp = "1453654748"
+

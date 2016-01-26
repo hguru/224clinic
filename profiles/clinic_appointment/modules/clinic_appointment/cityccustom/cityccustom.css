@@ -1,0 +1,29 @@
+
+/* Set FullCalendar default style */
+.fullcalendar-custom-clm,
+.fullcalendar-custom-clm .fc-event-skin,
+.fullcalendar-custom-clm .fc-event-time,
+.fullcalendar-custom-clm a {
+  border-color: #ffc0cb !important;
+  border-style: solid;
+  background-color: #ffc0cb !important;
+  color: #fff;
+}
+.fullcalendar-custom-c,
+.fullcalendar-custom-c .fc-event-skin,
+.fullcalendar-custom-c .fc-event-time,
+.fullcalendar-custom-c a {
+  border-color: #98fb98 !important;
+  border-style: solid;
+  background-color: #98fb98 !important;
+  color: #fff;
+}
+.fullcalendar-custom-n,
+.fullcalendar-custom-n .fc-event-skin,
+.fullcalendar-custom-n .fc-event-time,
+.fullcalendar-custom-n a {
+  border-color: #ff0000 !important;
+  border-style: solid;
+  background-color: #ff0000 !important;
+  color: #fff;
+}

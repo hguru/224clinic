@@ -1,0 +1,33 @@
+<?php
+/**
+ * @file
+ * Custom code for city cardio website.
+ */
+
+/**
+ * Implements hook_fullcalendar_classes().
+ *
+ * @param $node
+ *   An object representing the node.
+ *
+ * @return
+ *   A string suitable for use as a CSS class.
+ */
+function cityccustom_fullcalendar_classes($node) {
+  $status = $node->field_status;
+  if (!empty($status)) {
+    $status = reset($status);
+    return array('fullcalendar-custom-' . $status[0]['value']);
+  }
+}
+
+/**
+ * Implements hook_clinic_appointment_post_install().
+ */
+function cityccustom_clinic_appointment_post_install() {
+  variable_set('securesite_enabled', 1);
+  variable_set('securesite_login_form', 'Enter your username and password:');
+  variable_set('securesite_type', array(0 => '1'));
+  variable_set('securesite_realm', 'user\'s Site');
+
+}

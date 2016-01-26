@@ -1,0 +1,31 @@
+name = City Views
+core = 7.x
+package = Features
+version = 7.x-1.0-alpha2+6-dev
+project = clinic_appointment
+dependencies[] = fullcalendar
+dependencies[] = homebox
+dependencies[] = views
+datestamp = 1434850669
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[homebox][] = home
+features[views_view][] = appointment
+features[views_view][] = appointment_history
+features[views_view][] = appointment_tab
+features[views_view][] = cardiologist
+features[views_view][] = doctor
+features[views_view][] = due_for_check_up
+features[views_view][] = patient_appointment_history
+features[views_view][] = patient_search
+features[views_view][] = patients
+features[views_view][] = user_management
+features_exclude[dependencies][ctools] = ctools
+project path = profiles/clinic_appointment/modules/features
+
+; Information added by Drupal.org packaging script on 2016-01-24
+version = "7.x-1.0"
+core = "7.x"
+project = "clinic_appointment"
+datestamp = "1453654748"
+

@@ -1,0 +1,12 @@
+name = Date time range widget
+description = Collect end date with time unit format
+dependencies[] = date
+package = Date/Time
+core = 7.x
+
+; Information added by Drupal.org packaging script on 2016-01-24
+version = "7.x-1.0"
+core = "7.x"
+project = "clinic_appointment"
+datestamp = "1453654748"
+

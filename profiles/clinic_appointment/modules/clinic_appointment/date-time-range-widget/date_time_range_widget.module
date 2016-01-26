@@ -1,0 +1,119 @@
+<?php
+/**
+ * @file
+ * Defines date time field widget addon.
+ */
+
+/**
+ * Implements hook_date_popup_process_alter().
+ *
+ * TODO: make it work on multiple value.
+ */
+function date_time_range_widget_date_popup_process_alter(&$element, &$form_state, $context) {
+  $time_range_widget_time_unit = !empty($element['#field']['settings']['time_range_widget_time_unit']) ? $element['#field']['settings']['time_range_widget_time_unit'] : 900;
+  $time_range_widget = !empty($element['#field']['settings']['time_range_widget']) ? $element['#field']['settings']['time_range_widget'] : '';
+  if ($time_range_widget && $element['#parents'][3] === 'value') {
+    $lang = 'und';
+    $time_unit = intval($time_range_widget_time_unit) / 60;
+    $from = $form_state['values'][$element['#field']['field_name']][$lang][0]['value'];
+    $to = FALSE;
+    if (isset($form_state['values'][$element['#field']['field_name']][$lang][0]['value2'])) {
+      $to = $form_state['values'][$element['#field']['field_name']][$lang][0]['value2'];
+    }
+    if ($from && $to) {
+      if (is_array($from)) {
+        $from = $from['date'] . ' ' . $from['time'];
+      }
+      if (is_array($to)) {
+        $to = $to['date'] . ' ' . $to['time'];
+      }
+      $time_range = strtotime($to) - strtotime($from);
+      $select_unit = $time_range / $time_range_widget_time_unit;
+    }
+    else {
+      $select_unit = 1;
+    }
+    $default_units = empty($form_state['values']['time_range_units']) ? $select_unit : $form_state['values']['time_range_units'];
+    $element['time_range_units'] = array(
+      '#title' => t('Units'),
+      '#type' => 'select',
+      '#default_value' => $default_units,
+      '#options' => array(
+        1 => 1,
+        2 => 2,
+        3 => 3,
+        4 => 4,
+        5 => 5,
+        6 => 6,
+        7 => 7,
+        8 => 8,
+        9 => 9,
+        10 => 10,
+        11 => 11,
+        12 => 12,
+      ),
+      '#weight' => 21,
+      '#description' => t('Each unit: %time minutes.', array('%time' => $time_unit)),
+    );
+  }
+  if ($time_range_widget && $element['#parents'][3] === 'value2') {
+    $element['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_date_field_settings_form_alter().
+ */
+function date_time_range_widget_date_field_settings_form_alter(&$form, $context) {
+  $field = $context['field'];
+  $instance = $context['instance'];
+  $has_data = $context['has_data'];
+
+  $form['time_range_widget'] = array(
+    '#type' => 'select',
+    '#title' => t('Collect end date in time range format'),
+    '#default_value' => isset($field['settings']['time_range_widget']) ? $field['settings']['time_range_widget'] : 0,
+    '#options' => array(0 => t('No'), 1 => t('Yes')),
+    '#attributes' => array('class' => array('container-inline')),
+    '#description' => t("When collecting end date, this provide a way to select time units."),
+  );
+
+  $form['time_range_widget_time_unit'] = array(
+    '#type' => 'textfield',
+    '#title' => t('How many second per unit?'),
+    '#default_value' => isset($field['settings']['time_range_widget_time_unit']) ? $field['settings']['time_range_widget_time_unit'] : 900,
+    '#description' => t("When collecting end date, this set how many second in each units."),
+  );
+}
+
+/**
+ * Implements hook_date_popup_pre_validate_alter().
+ *
+ * TODO: Make it work on multiple value date field.
+ */
+function date_time_range_widget_date_popup_pre_validate_alter(&$element, &$form_state, &$input) {
+  if (isset($form_state['values']['language'])) {
+    $lang = 'und';
+    $time_range_widget = !empty($element['#field']['settings']['time_range_widget']) ? $element['#field']['settings']['time_range_widget'] : '';
+    $time_range_widget_time_unit = !empty($element['#field']['settings']['time_range_widget_time_unit']) ? $element['#field']['settings']['time_range_widget_time_unit'] : 900;
+    $time_unit = intval($time_range_widget_time_unit);
+    if ($time_range_widget && $element['#parents'][3] === 'value') {
+      $date = $element['#value']['date'];
+      $time = $element['#value']['time'];
+      $units = $element['#value']['time_range_units'];
+      $format = $element['#date_format'];
+      $start = strtotime($date . ' ' . $time);
+      $end = $start + $units * $time_unit;
+      $end_time = date($format, $end);
+      $end_time_arr = explode(' - ', $end_time);
+      $len = count($end_time_arr);
+      if ($len === 1) {
+        $end_time_arr = explode(' ', $end_time);
+      }
+      $form_state['values'][$element['#field']['field_name']][$lang][0]['value2']['date'] = $end_time_arr[0];
+      $form_state['values'][$element['#field']['field_name']][$lang][0]['value2']['time'] = $end_time_arr[1];
+      $form_state['input'][$element['#field']['field_name']][$lang][0]['value2']['date'] = $end_time_arr[0];
+      $form_state['input'][$element['#field']['field_name']][$lang][0]['value2']['time'] = $end_time_arr[1];
+    }
+  }
+}

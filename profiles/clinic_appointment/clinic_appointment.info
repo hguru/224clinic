@@ -1,0 +1,237 @@
+; Packaging information for clinic_appointment
+name = "Clinic Appointment Management System"
+description = ""
+exclusive = "1"
+core = "7.x"
+; ----------
+; Dependencies
+; ----------
+; Access control
+dependencies[] = content_access
+; Administration
+dependencies[] = admin_menu
+; Chaos tool suite
+dependencies[] = ctools
+; Context
+dependencies[] = context
+; Core
+dependencies[] = block
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = field
+dependencies[] = field_ui
+dependencies[] = field_sql_storage
+dependencies[] = file
+dependencies[] = filter
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = node
+dependencies[] = number
+dependencies[] = options
+dependencies[] = overlay
+dependencies[] = path
+dependencies[] = system
+dependencies[] = taxonomy
+dependencies[] = text
+dependencies[] = user
+; Date/Time
+dependencies[] = date
+dependencies[] = date_api
+dependencies[] = date_popup
+dependencies[] = date_time_range_widget
+dependencies[] = date_views
+; Fields
+dependencies[] = entityreference
+dependencies[] = field_group
+dependencies[] = references_dialog
+; FullCalendar
+dependencies[] = fullcalendar
+dependencies[] = fullcalendar_legend
+dependencies[] = fullcalendar_options
+; Homebox
+dependencies[] = homebox
+; Other
+dependencies[] = auto_nodetitle
+dependencies[] = cityccustom
+dependencies[] = entity
+dependencies[] = securesite
+dependencies[] = strongarm
+dependencies[] = token
+dependencies[] = uuid
+dependencies[] = uuid_features
+dependencies[] = field_collection
+; Views
+dependencies[] = views
+dependencies[] = views_ui
+; Features
+dependencies[] = features
+dependencies[] = city_views
+dependencies[] = content_type
+dependencies[] = misc
+dependencies[] = modules_list
+
+; ----------
+; Variables
+; ----------
+variables[additional_settings__active_tab_a] = 'edit-auto-nodetitle'
+variables[additional_settings__active_tab_c] = 'edit-auto-nodetitle'
+variables[additional_settings__active_tab_d] = 'edit-auto-nodetitle'
+variables[additional_settings__active_tab_p] = 'edit-auto-nodetitle'
+variables[admin_theme] = 'seven'
+variables[ant_a] = '1'
+variables[ant_c] = '1'
+variables[ant_d] = '1'
+variables[ant_p] = '1'
+variables[ant_pattern_a] = '[node:field_office] [node:field_date]'
+variables[ant_pattern_c] = '[node:field_first_name] [node:field_last_name] (Cardiologist)'
+variables[ant_pattern_d] = '[node:field_first_name] [node:field_last_name] (Referring Doctor)'
+variables[ant_pattern_p] = '[node:field_first_name] [node:field_last_name] (Patient)'
+variables[cache_class_cache_ctools_css] = 'CToolsCssCache'
+variables[comment_a] = '1'
+variables[comment_c] = '1'
+variables[comment_d] = '1'
+variables[comment_default_mode_c] = 1
+variables[comment_default_mode_d] = 1
+variables[comment_default_per_page_a] = '50'
+variables[comment_default_per_page_c] = '50'
+variables[comment_default_per_page_d] = '50'
+variables[comment_default_per_page_p] = '50'
+variables[comment_form_location_c] = 1
+variables[comment_form_location_d] = 1
+variables[comment_form_location_p] = 1
+variables[comment_p] = '2'
+variables[comment_preview_a] = '0'
+variables[comment_preview_c] = '1'
+variables[comment_preview_d] = '1'
+variables[comment_preview_p] = '1'
+variables[comment_subject_field_c] = 1
+variables[comment_subject_field_d] = 1
+variables[comment_subject_field_p] = 1
+variables[content_access_a][view_own][0] = 2
+variables[content_access_a][view_own][1] = 3
+variables[content_access_a][view][0] = 2
+variables[content_access_a][view][1] = 3
+variables[content_access_a][update][0] = 3
+variables[content_access_p][view_own][0] = 2
+variables[content_access_p][view_own][1] = 3
+variables[content_access_p][view][0] = 2
+variables[content_access_p][view][1] = 3
+variables[content_access_p][update][0] = 2
+variables[content_access_p][update][1] = 3
+variables[content_access_p][update_own][0] = 2
+variables[content_access_p][update_own][1] = 3
+variables[content_access_p][delete][0] = 2
+variables[content_access_p][delete][1] = 3
+variables[content_access_p][delete_own][0] = 2
+variables[content_access_p][delete_own][1] = 3
+variables[context_block_rebuild_needed] = true
+variables[date_api_version] = '7.2'
+variables[date_default_timezone] = 'UTC'
+variables[date_views_day_format_without_year] = 'l, F j'
+variables[date_views_day_format_with_year] = 'l, F j, Y'
+variables[date_views_month_format_without_year] = 'F'
+variables[date_views_month_format_with_year] = 'F Y'
+variables[date_views_week_format_without_year] = 'F j'
+variables[date_views_week_format_with_year] = 'F j, Y'
+variables[default_field_group][group_mh|node|patient_profile|form] = false
+variables[default_field_group][group_follow|node|patient_profile|form] = false
+variables[default_nodes_main] = '10'
+variables[entityreference:base-tables][comment][0] = 'comment'
+variables[entityreference:base-tables][comment][1] = 'cid'
+variables[entityreference:base-tables][node][0] = 'node'
+variables[entityreference:base-tables][node][1] = 'nid'
+variables[entityreference:base-tables][file][0] = 'file_managed'
+variables[entityreference:base-tables][file][1] = 'fid'
+variables[entityreference:base-tables][taxonomy_term][0] = 'taxonomy_term_data'
+variables[entityreference:base-tables][taxonomy_term][1] = 'tid'
+variables[entityreference:base-tables][taxonomy_vocabulary][0] = 'taxonomy_vocabulary'
+variables[entityreference:base-tables][taxonomy_vocabulary][1] = 'vid'
+variables[entityreference:base-tables][user][0] = 'users'
+variables[entityreference:base-tables][user][1] = 'uid'
+variables[field_bundle_settings_node__a][extra_fields][form][title][weight] = '0'
+variables[field_bundle_settings_node__a][extra_fields][form][path][weight] = '1'
+variables[field_bundle_settings_node__c][extra_fields][form][title][weight] = '-5'
+variables[field_bundle_settings_node__c][extra_fields][form][path][weight] = '30'
+variables[field_bundle_settings_node__d][extra_fields][form][title][weight] = '0'
+variables[field_bundle_settings_node__d][extra_fields][form][path][weight] = '1'
+variables[field_bundle_settings_node__p][extra_fields][form][title][weight] = '0'
+variables[field_bundle_settings_node__p][extra_fields][form][path][weight] = '1'
+variables[filter_fallback_format] = 'plain_text'
+variables[fullcalendar_options][firstHour] = true
+variables[fullcalendar_options][minTime] = true
+variables[fullcalendar_options][maxTime] = true
+variables[fullcalendar_options][slotMinutes] = true
+variables[fullcalendar_options][defaultEventMinutes] = true
+variables[fullcalendar_options][allDaySlot] = true
+variables[fullcalendar_options][weekends] = true
+variables[fullcalendar_options][lazyFetching] = true
+variables[fullcalendar_options][disableDragging] = true
+variables[fullcalendar_options][disableResizing] = true
+variables[fullcalendar_options][dragRevertDuration] = true
+variables[fullcalendar_options][dayClick] = true
+variables[menu_parent_a] = 'main-menu:0'
+variables[menu_parent_c] = 'main-menu:0'
+variables[menu_parent_d] = 'main-menu:0'
+variables[menu_parent_p] = 'main-menu:0'
+variables[nodeaccess_appointment][0][gid] = 1
+variables[nodeaccess_appointment][0][realm] = 'nodeaccess_rid'
+variables[nodeaccess_appointment][0][grant_view] = 1
+variables[nodeaccess_appointment][0][grant_update] = 0
+variables[nodeaccess_appointment][0][grant_delete] = 0
+variables[nodeaccess_appointment][1][gid] = 2
+variables[nodeaccess_appointment][1][realm] = 'nodeaccess_rid'
+variables[nodeaccess_appointment][1][grant_view] = 1
+variables[nodeaccess_appointment][1][grant_update] = 0
+variables[nodeaccess_appointment][1][grant_delete] = 0
+variables[nodeaccess_patient_profile][0][gid] = 1
+variables[nodeaccess_patient_profile][0][realm] = 'nodeaccess_rid'
+variables[nodeaccess_patient_profile][0][grant_view] = 0
+variables[nodeaccess_patient_profile][0][grant_update] = 0
+variables[nodeaccess_patient_profile][0][grant_delete] = 0
+variables[nodeaccess_patient_profile][1][gid] = 2
+variables[nodeaccess_patient_profile][1][realm] = 'nodeaccess_rid'
+variables[nodeaccess_patient_profile][1][grant_view] = 1
+variables[nodeaccess_patient_profile][1][grant_update] = 0
+variables[nodeaccess_patient_profile][1][grant_delete] = 0
+variables[nodeaccess_patient_profile][2][gid] = 3
+variables[nodeaccess_patient_profile][2][realm] = 'nodeaccess_rid'
+variables[nodeaccess_patient_profile][2][grant_view] = 0
+variables[nodeaccess_patient_profile][2][grant_update] = 0
+variables[nodeaccess_patient_profile][2][grant_delete] = 0
+variables[node_admin_theme] = 1
+variables[node_options_a][0] = 'status'
+variables[node_options_c][0] = 'status'
+variables[node_options_c][1] = 'promote'
+variables[node_options_d][0] = 'status'
+variables[node_options_d][1] = 'promote'
+variables[node_options_p][0] = 'status'
+variables[node_options_page][0] = 'status'
+variables[node_preview_a] = '1'
+variables[node_preview_c] = '0'
+variables[node_preview_d] = '1'
+variables[node_preview_p] = '0'
+variables[path_alias_whitelist][node] = true
+variables[path_alias_whitelist][taxonomy] = true
+variables[path_alias_whitelist][user] = true
+variables[save_continue_appointment] = 'Save and add fields'
+variables[save_continue_c] = 'Save and add fields'
+variables[save_continue_doctor] = 'Save and add fields'
+variables[save_continue_patient_profile] = 'Save and add fields'
+variables[site_frontpage] = 'dashboard'
+variables[theme_default] = 'citycardio'
+variables[user_pictures] = '1'
+variables[user_picture_dimensions] = '1024x1024'
+variables[user_picture_file_size] = '800'
+variables[user_picture_style] = 'thumbnail'
+variables[user_register] = 2
+
+
+; Information added by Drupal.org packaging script on 2016-01-24
+version = "7.x-1.0"
+core = "7.x"
+project = "clinic_appointment"
+datestamp = "1453654748"
+
